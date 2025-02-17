@@ -72,14 +72,14 @@ jobs:
               run: npm run lint -- --max-warnings 0
     build-macos:
         runs-on: macos-latest
-        name: Node 20 macOS
+        name: Node 22.11.0 macOS
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
             - name: Set up Node
               uses: actions/setup-node@v4
               with:
-                  node-version: 20
+                  node-version: 22.11.0
             - name: Install
               run: npm ci
             - name: Build
