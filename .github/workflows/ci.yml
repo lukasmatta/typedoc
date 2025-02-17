@@ -70,3 +70,21 @@ jobs:
               run: npm run test:full
             - name: Lint
               run: npm run lint -- --max-warnings 0
+    build-macos:
+        runs-on: macos-latest
+        name: Node 20 macOS
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - name: Install
+              run: npm ci
+            - name: Build
+              run: npm run build
+            - name: Test
+              run: npm run test:full
+            - name: Lint
+              run: npm run lint -- --max-warnings 0
